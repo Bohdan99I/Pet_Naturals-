@@ -23,7 +23,6 @@ function updateTimer() {
 }
 
 updateTimer();
-
 const timerInterval = setInterval(updateTimer, 1000);
 
 ////////////////////////////////*date*///////////////////////////
@@ -32,7 +31,6 @@ const dateEl = document.getElementById("date");
 
 function getTodayDate() {
   const today = new Date();
-
   const options = { day: "2-digit", month: "2-digit", year: "numeric" };
   const formatter = new Intl.DateTimeFormat("en-US", options);
   const todayDate = formatter.format(today);
