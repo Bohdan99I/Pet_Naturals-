@@ -6,6 +6,7 @@ function formatTime(seconds) {
   const hours = Math.floor(seconds / 3600);
   const minutes = Math.floor((seconds % 3600) / 60);
   const remainingSeconds = seconds % 60;
+
   return `${String(hours).padStart(2, "0")}:${String(minutes).padStart(
     2,
     "0"
@@ -14,10 +15,12 @@ function formatTime(seconds) {
 
 function updateTimer() {
   clockElement.textContent = formatTime(timeInSeconds);
+
   if (timeInSeconds > 0) {
     timeInSeconds--;
   } else {
     clearInterval(timerInterval);
+
     clockElement.textContent = "Time has passed!";
   }
 }
@@ -25,8 +28,8 @@ function updateTimer() {
 updateTimer();
 const timerInterval = setInterval(updateTimer, 1000);
 
-////////////////////////////////*date*///////////////////////////
 
+////////////////////////////////*date*///////////////////////////
 const dateEl = document.getElementById("date");
 
 function getTodayDate() {
@@ -42,8 +45,8 @@ function getTodayDate() {
 
 getTodayDate();
 
-/////////////////////////*phoneMask*///////////////////////////
 
+/////////////////////////*phoneMask*///////////////////////////
 const phoneMask = document.getElementById("phone");
 if (phoneMask) {
   IMask(phoneMask, { mask: "+{38}(\\000) 000-00-00" });
